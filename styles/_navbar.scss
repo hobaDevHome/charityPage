@@ -1,0 +1,161 @@
+@import "colors";
+@import "media-queries";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Fredoka:wght@500&family=Roboto:wght@300&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+  z-index: 10;
+  position: relative;
+  padding-top: 20px;
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+
+  &__leftBox {
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+    @include mobile {
+      flex-direction: column;
+    }
+    &__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      font-weight: 700;
+      flex: 1;
+      @include mobile {
+        padding: 10px;
+      }
+
+      p:nth-child(1) {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 58px;
+        margin-bottom: 0;
+        @include tablet {
+          font-size: 30px;
+        }
+        @include mobile {
+          font-size: 36px;
+        }
+      }
+      p:nth-child(2) {
+        font-family: "Fredoka", sans-serif;
+        font-size: 36px;
+        margin-bottom: 0;
+        @include tablet {
+          font-size: 20px;
+        }
+        @include mobile {
+          font-size: 28px;
+        }
+      }
+
+      p:nth-child(3) {
+        font-family: "Roboto", sans-serif;
+        font-size: 21px;
+        margin-bottom: 0;
+        @include tablet {
+          font-size: 18px;
+        }
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      justify-content: center;
+      flex: 1;
+      @include tablet {
+        padding-left: 10px;
+      }
+
+      &--itme {
+        color: $lightGreen;
+        margin-top: 5px;
+        display: flex;
+        padding: 5px;
+        cursor: pointer;
+        align-items: center;
+        text-decoration: none;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        margin-bottom: 5px;
+
+        @include mobile {
+          background-color: #8fd192;
+          color: #000;
+          font-weight: bold;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: $darkGreen;
+          transition: all 0.3s ease;
+          @include mobile {
+            background-color: #0e6f3b;
+            color: white;
+          }
+        }
+
+        &--box {
+          width: 10px;
+          height: 26px;
+          border-radius: 2px;
+          background-color: $lightGreen;
+          margin-right: 3px;
+          @include mobile {
+            display: none;
+          }
+        }
+        &--icon {
+          width: 20px;
+          height: 20px;
+          background-color: $lightGreen;
+          border-radius: 10px;
+          color: white;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include mobile {
+            display: none;
+          }
+          span {
+            font-size: 15px;
+            background-color: transparent;
+          }
+        }
+        p {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    &--img {
+      width: 60%;
+      @include mobile {
+        width: 90%;
+      }
+    }
+  }
+}

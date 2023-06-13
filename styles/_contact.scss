@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Fredoka:wght@500&family=Roboto:wght@300&display=swap");
+.contact {
+  &__box {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: $lightGreen;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    @include tablet {
+      width: 90%;
+    }
+    @include mobile {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 0;
+      flex-direction: column-reverse;
+    }
+
+    &--left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.2vw;
+      flex: 1;
+      @include tablet {
+        font-size: 2vw;
+        justify-content: start;
+      }
+      @include mobile {
+        font-size: 1.7vh;
+      }
+
+      &-text {
+        padding: 10px;
+      }
+
+      &-social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding: 10px 10px;
+
+        &--phone {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 10px;
+          margin-right: 10px;
+
+          p {
+            margin-top: 0;
+          }
+
+          &-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include mobile {
+              font-size: 10px;
+            }
+          }
+          p {
+            font-weight: 700;
+            @include tablet {
+              font-size: 12px;
+            }
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+          img {
+            width: 1.8rem;
+            margin-right: 10px;
+            @include tablet {
+              width: 1rem;
+            }
+            @include mobile {
+              width: 1.2rem;
+            }
+          }
+        }
+        &--title {
+          font-weight: 700;
+          line-height: 1.6;
+          margin-right: 10px;
+
+          p {
+            margin-top: 0;
+          }
+          @include tablet {
+            font-size: 12px;
+          }
+          @include mobile {
+            font-weight: 400;
+            line-height: 1.2;
+            margin-right: 8px;
+          }
+        }
+        &--icons {
+          display: flex;
+
+          flex-direction: row;
+          flex-wrap: wrap;
+          //   flex-basis:
+          &-icon-div {
+            flex-basis: 50%;
+            flex-grow: 1;
+            margin: 0;
+            padding: 0;
+            width: fit-content;
+          }
+
+          img {
+            max-width: 1.8rem;
+            margin: 0;
+            @include tablet {
+              width: 1rem;
+            }
+            @include mobile {
+              width: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+    &--divider {
+      width: 2px;
+      max-height: 100%;
+      background-color: #a8a6a6;
+      @include mobile {
+        width: 100%;
+        height: 2px;
+      }
+    }
+    &--right {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      flex: 1;
+
+      &--form {
+        display: flex;
+        flex-direction: column;
+
+        &--form--row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin: 5px 10px;
+
+          color: rgba(0, 0, 0, 0.6);
+
+          input {
+            background-color: transparent;
+            border: 1px solid gray;
+            border-radius: 10px;
+            height: 18px;
+            width: 70%;
+            @include mobile {
+              max-width: 70%;
+            }
+          }
+          #btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3eb25e;
+            border-radius: 10px;
+            padding: 5px 30px;
+            cursor: pointer;
+            width: 50%;
+            color: white;
+          }
+          &:last-of-type {
+            justify-content: center;
+          }
+        }
+
+        &--right {
+          display: flex;
+          flex-direction: column;
+
+          @include mobile {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+}

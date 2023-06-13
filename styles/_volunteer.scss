@@ -1,0 +1,123 @@
+@import "colors";
+@import "media-queries";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Fredoka:wght@500&family=Roboto:wght@300&display=swap");
+
+.volunteer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  &__title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 40px;
+    position: relative;
+    width: fit-content;
+    font-weight: 500;
+    &::after {
+      content: "";
+      display: block;
+      background-color: #8fd192;
+      border-radius: 5px;
+      position: absolute;
+      top: 0.4em;
+      right: -0.3em;
+      width: 6.7ch;
+      height: 0.7em;
+      border-radius: 5px;
+      z-index: -1;
+    }
+  }
+
+  &__cards-hoder {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include tablet {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+      gap: 20;
+    }
+
+    &--card {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $lightGreen;
+      border-radius: 5px;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+
+      &-p1 {
+        font-family: "Fredoka", sans-serif;
+        font-size: 30px;
+        margin-top: 8px;
+      }
+      &-p2 {
+        font-family: "Fredoka", sans-serif;
+        font-size: 0.8rem;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+      #btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightGreen;
+        border-radius: 15px;
+        padding: 5px 25%;
+        position: absolute;
+        bottom: -5%;
+        cursor: pointer;
+        left: calc(12.5% + 10px);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      #btn a {
+        position: relative;
+        z-index: 2;
+        text-decoration: none;
+      }
+
+      #btn:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgb(240, 129, 129);
+        transition: all 0.3s;
+        border-radius: 15px;
+      }
+
+      #btn:hover:after {
+        width: 100%;
+        color: white;
+      }
+    }
+  }
+}
